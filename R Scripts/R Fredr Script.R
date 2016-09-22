@@ -1,4 +1,6 @@
 #INformation from https://github.com/sboysel/fredr
+# install.packages("devtools")
+devtools::install_github("sboysel/fredr")
 #Main Commands
 # Website to search Fred variables
 # https://research.stlouisfed.org/
