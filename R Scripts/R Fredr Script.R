@@ -1,30 +1,49 @@
 #INformation from https://github.com/sboysel/fredr
+# install.packages("devtools")
+devtools::install_github("sboysel/fredr")
 #Main Commands
 # Website to search Fred variables
 # https://research.stlouisfed.org/
 
 library(fredr)
+library(dplyr)
+library(ggfortify)
+
+#My API Key for Lathropmike0@GMAIL.com
+fredr_key("58009e7b98595c8405fcb15ec6851d64")
+FRED API key successfully set. Run 'Sys.getenv('FRED_API_KEY')' to see key
+
 fredr_search(search_text = "housing")
 
 fredr_series(series_id = "HOUST",
              observation_start = "1990-01-01",
              observation_end = "1995-01-01")
+HOUS <- data.frame(housing)
+autoplot.zoo(HOUS)
+write.csv(HOUS, "HOUS.CSV")
 
-fredr_series(series_id = "UNRATE",
-             observation_start = "1990-01-01",
-             frequency = "q",
-             units = "chg")
+fredr_series(series_id = "BAMLH0A0HYM2", observation_start = "2008-01-01", frequency = "m", units = "lin")
+autoplot.zoo()
 
-library(dplyr)
-library(ggfortify)
-fredr_series(series_id = "GNPCA",
-             units = "log") %>%
-  autoplot()
+## Converting Tables from Quarterly and Monthly into a Single Series
+#The data for the series does not contain the dates in the table, it will need to be added in Col 1
 
-###################################
+
+
+
+
+
+
+
+######################################################################################################
+######################################################################################################
+#               Notes
+######################################################################################################
+######################################################################################################
+
 library(fredr)
 #My API Key for Lathropmike0@GMAIL.com
-> fredr_key("58009e7b98595c8405fcb15ec6851d64")
+fredr_key("58009e7b98595c8405fcb15ec6851d64")
 FRED API key successfully set. Run 'Sys.getenv('FRED_API_KEY')' to see key
 
 #Searching for a FRED Series
@@ -102,6 +121,7 @@ library(dplyr)
 library(ggfortify)
 fredr_series(series_id = "GNPCA",
              units = "log") %>%
-  autoplot()
+  autoplot.zoo()
 
 fredr_series(series_id = "NMFCI", observation_start = "2008-01-01", frequency = "m", units = "lin")
+fredr_series(series_id = "BAMLH0A0HYM2", observation_start = "2008-01-01", frequency = "m", units = "lin")
