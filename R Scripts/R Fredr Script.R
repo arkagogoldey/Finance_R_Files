@@ -1,4 +1,4 @@
-#INformation from https://github.com/sboysel/fredr
+#Information from https://github.com/sboysel/fredr
 # install.packages("devtools")
 devtools::install_github("sboysel/fredr")
 #Main Commands
