@@ -2,7 +2,8 @@
 #https://support.pertrac.com/manual/whgdata/whlstt20.htm
 # Formulas from Pertrac 
 #https://support.pertrac.com/PerTrac_User_Manual/module_12_2.html?mw=MjQw&st=MQ==&sct=MA==&ms=AgAAAAAg
-
+#Subsetting Dates
+#https://stackoverflow.com/questions/23622338/subset-a-dataframe-between-2-dates
 
 #Value Added Monthly Index (VAMI)
 #Average Return (Mean)
