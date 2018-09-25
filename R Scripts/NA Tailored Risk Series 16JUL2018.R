@@ -116,6 +116,7 @@ port <- portfolio.spec(assets = c("GSCI", "USHY", "USAGG", "USLC", "USMC", "USSC
                                   "EAFE", "EM", "USRE", "CASH", "INTLFI","GLBLRE",
                                   "INTLSC","INFRA","BKLOANS","EMDEBT"))
 
+################################################################################################################
 ## TEST IF IMPORTED MIN & MAX objects work
 NABaseConstraints <- read_excel("C:/Users/Michael/Downloads/NABaseConstraints.xlsx", 
                                     col_types = c("text", "numeric", "numeric", 
@@ -151,6 +152,7 @@ BasePort <- portfolio.spec(assets = c("GSCI", "USHY", "USAGG", "USLC", "USMC", "
                                   "EAFE", "EM", "USRE", "CASH", "INTLFI","GLBLRE",
                                   "INTLSC","INFRA","BKLOANS","EMDEBT"))
 BasePort <- add.objective(BasePort, type='return',name='mean')
+BasePort <- add.objective(BasePort, type='risk',name='StdDev')
 n <- 5000 #Search Size in optimize.portfolio
 Base85 <- add.constraint(BasePort, type = "box", min=w85min, max=w85max)
 opt_Base85 <- optimize.portfolio(R=BRT_ts, portfolio=Base85,
